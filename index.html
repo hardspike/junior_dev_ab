@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="showFirstQuiz">First Quiz</button>
+    <button id="showSecondQuiz">Second Quiz</button>
+
+    <div id="firstQuiz">
+
+        <h1>Junior Dev A</h1>
+
+        <div class="container">
+
+            <h2>CSS Basics</h2>
+            <span class="answerContent">
+                <b>1. פרמטר Display מקבל את הערכים הבאים:</b>
+                <br>
+                <b>- Block</b> – ערך הגורם לאלמנט לתפוס את כל רוחב הדף ובעצם להיות היחיד בשורתו, גם אם הוגדר לו רוחב
+                מסויים.
+                (בלוק אלמנט יכול לקבל פרמטרים של גובה ורוחב)
+                <br>
+                <b>- Inline</b> – ערך המאפשר לאלמנט להתמקם באותה השורה עם האלמנטים הסמוכים אליו מבלי "להפריע" לסדר ההצגה
+                שלהם
+                או לרדת שורה. אלמנט אינליין יקבל את מימדי ברירת המחדל שלו ולא יהיה ניתן לשנות אותם; כמו כן לא יהיה ניתן
+                להשתמש
+                בפרמטרים כמו "margin-top/bottom" ו-"float" שייגרמו לו לצאת מהשורה שלו.
+                <br>
+                <b>- Inline-Block</b> – ערך המשלב בין אינליין לבלוק, כאשר האלמנט יוכל להופיע באותה שורה עם אלמנטים אחרים
+                אך גם
+                לקבל פרמטרים של רוחב/גובה וגם margin מאלמנטים אחרים ובכך "לדחוף" ממנו אלמנטים לכל כיוון רצוי ואף לשנות
+                את גובה
+                השורה ולהכריח אותה להתרחק גם היא משורות אלמנטים אחרות.
+                <br>
+                <b>- None</b> – "מעלים" אלמנט מהדף, כך שהתגית שלו כן תופיע בHTML אך האלמנט עצמו לא יהיה קיים בדף ולא יקח
+                שום
+                אפקט בו או ישפיע על אלמנטים מסויימים מבחינת מיקום.
+                <br>
+                <b>- Initial</b> – יחזיר את פרמטר הDisplay לערך הראשוני שלו כאשר הוא נוצר.
+                <br>
+                <b>- Flex/Inline-Flex (CSS3)</b> – ערך הנועד לפשט מיקומם של אלמנטים ומאפשר ייעול מבחינת התנגשות margin
+                של תכולת
+                האלמנט, התאמת מימדים כדי לתפוס את שטח ה-parent הפנוי בצורה טובה יותר, שינוי סדר הופעתם של אלמנטים מבלי
+                צורך לשנות
+                את ה-HTML, קביעת האלמנט כ-row או כ-column, ידידותי להתאמת Responsive ועוד. אפשרויות אלה מונגשות דרך
+                פרמטרים שונים
+                המתאימים לFlexbox, כמו: flex-direction, flex-wrap, flex, order, ועוד.
+                <br>
+                <b>- Table</b> – ערך המאפשר פריסת אלמנטים בדרך שמדמה טבלה. גם לאלמנט טייבל יש כמה פרמטרים הקובעים את
+                אופיו ומיקומו.
+                (שיטה פחות שכיחה היום)
+                <br><br>
+                <b>2. פרמטר Position מקבל את הערכים הבאים:</b>
+                <br>
+                <b>- Static</b> – ערך ברירת המחדל של הפרמטר. ערך זה גורם לאלמנט "לצוף" מלמעלה למטה, או מצד לצד תלוי
+                בכיוון ההוגדר
+                לאלמנט ה-parent המכיל אותו.
+                <br>
+                <b>- Relative</b> – ערך המאפשר לאלמנט לשנות מיקום ע"י פרמטרי כיוון (left/right/top/bottom) ביחס למיקומו
+                המקורי,
+                ז"א שכשהאלמנט מקבל לדוגמה top: 0; left: 0 הוא ימוקם במיקום המקורי שלו ולא בפינת המסך. מיקום/הזזת האלמנט
+                לא "יפריע"
+                ולא ישנה שום פוזיציה של אלמנט חיצוני סמוך.
+                <br>
+                <b>- Absolute</b> – ערך שבדומה לרלטיב לא "יפריע" לשום אלמנט, אך כשיוגדרו לו פרמטרי כיוון, מצב האפס שלו
+                יתחיל
+                מפינת המסך, אלא אם כן הParent שלו הוגדר כרלטיב ואז הוא יתחיל מפינת האלמנט שמכיל אותו. אלמנט אבסולוטי
+                יגיב לפרמטר
+                margin. כאשר לאלמנט לא מוגדרים מימדים קבועים, הוא יתכווץ כדי לעטוף את התכנים שבתוכו בלבד, אך כשמוגדרים
+                לאלמנט
+                2 פרמטרים מכיוונים שונים (כגון top: 50px; bottom: 50px) הוא ישנה את גודלו עד שחלקו העליון יהיה במרחק 50
+                פיקסלים
+                מלמעלה והתחתון 50 פיקסלים מלמטה וכד'. האלמנט לא ירחיב את מימדי הparent שלו אם הם לא הוגדרו מראש (לא כמו
+                בלוק/רלטיב
+                לדוגמה).
+                <br>
+                <b>- Fixed</b> – ערך הדומה באופיו לאבסולוט, אך ההבדל בניהם הוא שכשיוגדר לו מרחק מסויים משולי המסך, הוא
+                יישאר
+                מקובע באותו מקום גם כשהיוזר גולל לצדדים בדף (Scroller)
+                <br>
+                <b>- Sticky</b> – ערך שלא ישנה את מיקומו של האלמנט, אך כשיוגדר לו אלמנט כיוון, למשל top: 25px, והיוזר
+                יגלול את
+                המסך למטה - האלמנט יישאר מקובע כמו Fixed במיקום 25 פיקסלים מתקרת המסך במקום להעלם, ורק כשתחתית הParent
+                המכיל
+                שלו תיעלם מהמסך הוא ייעלם ביחד איתו.
+                <br>
+                <b>- כל ערכי הפוזישן יגיבו לפרמטר z-index.</b>
+                <br><br>
+                3. <b>Margin</b> ו-<b>Padding</b> שניהם אחראים על שליטה ברווח, ההבדל בניהם הוא איפה הרווחים מתבטאים. <br>
+                Margin מחליט כמה רווח יהיה בין האלמנט לבין אלמנטים אחרים, ז"א הרווח יהיה מחוץ לאלמנט עצמו וירחיק אותו מאלמנטים אחרים. <br>
+                Padding מחליט כמה רווח יהיה בין גבולות האלמנט לבין התוכן שלו, ז"א הרווח יהיה צמוד לשולי הבורדר <b>בתוך</b> האלמנט.
+
+            </span>
+
+        </div>
+
+        <div class="container">
+
+            <h2>CSS</h2>
+            <span class="answerContent">
+                - להגדיר את הדיבים הפנימיים כ-<b>Inline-Block</b> ולוודא שרוחבם + הmargin הצדדי של כולם ביחד לא עולה על
+                זה של
+                הקונטיינר.
+                <br> - להגדיר את הדיבים הפנימיים כ-position: <b>absolute</b>.
+                <br> חסרון: כל דיב פנימי יצטרך לקבל מארג'ין (או<br> left/right אם הקונטיינר הוא רלטיב) שונה מהאחרים כדי
+                שמיקומם
+                לא יחפוף. (השני יקבל left שיהיה שווה או גדול מהwidth+left של הראשון וכך הלאה) חסרון: הקונטיינר יהיה חייב
+                לקבל
+                פרמטרים של<br> height/width, אלא אם כן מימדיו יתכווצו.
+                <br> - להגדיר את הדיבים הפנימיים כposition: <b>relative</b>. יתרון: בשונה מאבסולוט, רלטיב כן "יחזיק" את
+                מימדי
+                הקונטיינר וירחיב אותו גם אם הם לא הוגדרו.<br> חסרון: אותו חסרון כמו של אבסולוט, רק פרמטרי הכיוון יצטרכו
+                לקבל
+                ערכים ביחס למיקומם המקורי ולא לקונטיינר<br>
+                <br> - להגדיר את הדיבים הפנימיים כ-display: <b>flex</b> או position: <b>sticky</b>. חסרון: יהיה על כל
+                דיב פנימי
+                לקבל מארג'ין שלילי ושונה מכל<br> sibling שלו בשביל להסתדר נכון לתרגיל. שיטה די מסורבלת ולא מומלצת.
+                <br> אפשר לשלב בין הדרכים הנ"ל (כגון אחד מהם יכול להיות inline-block והשניים האחרים
+                אבסולוטים/רלטיביים/פלקסים/סטיקיים)
+                אך לא מומלץ אם מטרתנו היא שכל הדיבים הפנימיים יתנהגו באותה צורה בדיוק בדף (אם יוספו תכנים לקונטיינר הוא
+                יכול
+                לשבש את הסדר של חלקם וליצור אי-אחידות).
+                <br>
+                <b>לדעתי כל יתרון/חסרון לא תמיד רלוונטי כי הכל תלוי במה שאנחנו רוצים מהdivים ואיך אנחנו רוצים לשלב אותם
+                    בדף שלנו.
+                    תמיד אפשר למצוא עוד דברים שיוגדרו כ"יתרון" או "חסרון" ספציפיים לאותה מטרה.</b>
+
+            </span>
+
+        </div>
+        <div class="container">
+
+            <h2>Advanced CSS</h2>
+            <span class="answerContent">
+                - הdivים הפנימיים ממוקמים אחד מתחת לשני מכיוון שכשמשתמשים באלמנטי אינליין-בלוק, תמיד יהיה להם "מארג'ין"
+                או "wrap" של בערך
+                4-5 פיקסלים.<br>
+                - אפשר לתקן את הקוד ע"י הוספת margin-left/right שלילי של 5 פיקסלים ומעלה לפנימיים. (לא הכי מומלץ)
+                <br>
+                - אפשר לשנות את הdisplay של הקונטיינר ל-<b>flex</b>. (הדרך המדוייקת שמופיעה בשרטוט מכיוון שבדרכים האחרות
+                עדיין ישאר
+                "מארג'ין" קטן בין הדיבים)<br>
+
+                - אפשר להוסיף לקונטיינר פרמטר white-space: <b>nowrap</b>.
+
+            </span>
+
+        </div>
+
+        <div class="container alignLeft">
+
+            <h2>Basic Programming</h2>
+            <span class="answerContent">
+
+                Script:
+                <br>
+                <xmp>"use strict";
+
+                    (() => {
+
+
+                        let sortedArray = [];
+                        let lowestNum;
+                        const initialLength = myArray.length;
+                
+                        for (let j = 0; j < initialLength; j++) {
+                
+                            lowestNum = myArray[0];
+                
+                            // Get Minimal Number Without Using "Math.min(...myArray)";
+                            for (let i = 0; i < myArray.length; i++) {
+                                if (lowestNum > myArray[i]) {
+                                    lowestNum = myArray[i];
+                                }
+                            }
+                
+                            sortedArray.push(lowestNum); // Push Current Lowest Number To Final Array
+                            myArray.splice($.inArray(lowestNum, myArray), 1); // Remove Current Lowest Number From Array
+                        }
+                
+                        $("#sortedArray").text(sortedArray);
+
+
+                        }) ();
+                </xmp>
+                Initial Array: <span id="initialArray"></span>
+                <br>
+                Sorted Array: <span id="sortedArray"></span>
+
+            </span>
+
+        </div>
+
+        <div class="container">
+
+            <h2>Wordpress</h2>
+            <span class="answerContent">
+    1. וורדפרס היא פלטפורמת קוד פתוח שכל אחד יכול לקחת חלק בהמון רבדים שלה, היא פשוטה, אפשר למצוא בה עשרות אלפי תוספים <br>
+    ועזרים של משתמשים מכל רחבי העולם. אחת הסיבות הכי משמעותיות לדעתי היא שלא חייב לדעת לקודד בשביל להרים אתר וורדפרס, <br>
+    כך שכל אדם היום יכול להרים אתר בזמן קצר. אפשר גם לשלב קוד בוורדפרס כך שהמון מתכנתים היום גם משתמשים בפלטפורמה.
+                    <br><br>
+                    2. page.php הוא קובץ שאפשר לשנות בו את עיצוב הטמפלייט של הדף, single.php הוא קובץ שאחראי על עיצוב הטמפלייט של אלמנטים מסויימים בדף.
+                    <br>
+                    3. יש לי נסיון מינורי בוורדפרס, הוצע לי להתנדב לפרוייקט של מכירת כרטיסים למסיבת פורים של עמותה למען ילדות במצוקה, <br>
+                    קיבלתי דד-ליין של יום וחצי ללמוד להשתמש בפלטפורמה מאפס ולהרים אתר פשוט. השתמשתי ב-Woocommerce כדי להקים את חנות הכרטיסים <br>
+                    וב-Elementor בשביל לגעת באלמנטים של הדף בדרך יותר פשוטה. בחרתי להשתמש יותר בקוד מאשר בתוספים בפרוייקט הזה מכיוון שניתן לי <br>
+                    זמן מאוד קצר ללמוד להשתמש בפלטפורמה ולהקים את האתר לפי האפיון שקיבלתי.<br>
+                    4. ACF הוא תוסף המאפשר ליצור שדות דינמיים. אחד היתרונות הבולטים שלו הוא שהוא מאפשר ליצור ממשק ניהול ידידותי ללקוח דרך הפלטפורמה.
+
+                <br><br>
+
+                    <b>SASS/SCSS</b> - "סאסי סטיילשיטס" לוקח את ה-CSS שלב אחד קדימה. סאס מאפשר לשלב בסיאסאס פיצ'רים חדשים כמו <br>
+                    Variables, Inheritance, Nesting, Mixins ועוד. סאס קל להתקנה ושימוש, הוא בעצם יותר קובץ .SCSS ועושה לו קומפילציה לקובץ CSS רגיל בסיום.
+                    נסיון מינורי.<br>
+                    <b>Git</b> - גיט היא מערכת קוד פתוח לשליטה ותיאום גרסאות בצורה הכי נוחה. גיט תהיה חיונית לעבודה על פרוייקטים בצוות מתכנתים. <br>
+                    אין לי נסיון במערכת.
+   
+            </span>
+
+        </div>
+
+    </div>
+
+    <div id="secondQuiz">
+
+        <h1>Junior Dev B</h1>
+
+        <div class="container alignLeft">
+
+            <h2>CSS</h2>
+            <span class="answerContent">
+                <div class="solutionBlock">
+                    <b>Solution 1:</b>
+                    <br>
+                    <xmp>
+                        #container {
+                        position: relative;
+                        }
+
+                        #inner {
+                        position: absolute;
+                        left:0; right:0;
+                        top:0; bottom:0;
+                        margin: auto;
+                        }
+                    </xmp>
+                </div>
+                <div class="solutionBlock">
+                <b>Solution 2:</b>
+                <xmp>
+                    #container {
+                    display: flex;
+                    flex-direction: row;
+                    }
+
+                    #inner {
+                    align-self: center;
+                    margin: auto;
+                    }
+                </xmp>
+                </div>
+                <div class="solutionBlock">
+                <b>Solution 3:</b>
+                <xmp>
+                    #container {
+                    position: relative;
+                    }
+
+                    #inner {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    -webkit-transform: translate(-50%, -50%); // Optional
+                    transform: translate(-50%, -50%);
+                    }
+                </xmp>
+                </div>
+                <div class="solutionBlock">
+                <b>Solution 4:</b>
+                <xmp>
+                    #container {
+                        display: table;
+                    }
+
+                    #inner {
+                        display: table-cell;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                </xmp>
+            </div>
+            </span>
+           
+        </div>
+
+        <div class="container alignLeft">
+
+            <h2>JavaScript</h2>
+            <span class="answerContent">
+                
+                A somewhat hard-coded solution, but it's something.
+                <br><br>
+
+                <label>Number: </label><input type="number" placeholder="8" id="numInputBox">
+                <div id="combinationsSet"></div>
+
+                <br><br>
+                Script:
+                   <xmp>    function showSteps(num) {
+
+                    let combinationsSet = new Set(); // Set of all combinations from the function
+                    let arr = []; // Main array to add to the set when reaching a check point
+                    let itemIndex; // Locating a specific item in the array
+                    let tmpArr; // Duplication of main array
+                    let tmpArr2; // ""
+            
+                    for (let i = 0; i < num; i++) {
+                        arr.push(1);
+                    }
+                    combinationsSet.add(arr.toString());
+            
+                    for (let j = 0; j < arr.length; j++) {
+                        if (arr[arr.length - j - 1] == 1) {
+                            arr[0] += 1; // 2, 1, 1, 1, 1, 1, 1, 1 (8)
+                            arr.splice(arr.length - j - 1, 1); // 2, 1, 1, 1, 1, 1, 1, (7)
+                            if (sum(arr) == num) { // Validating that the array still sums up to the given number
+                                combinationsSet.add(arr.toString());
+                            }
+            
+                            itemIndex = arr.indexOf(1);
+                            if (itemIndex > -1) { // If array contains an item with value of 1, switch its index with the one before it
+                                while (itemIndex > -1) {
+                                    arr[itemIndex - 1] = 1;
+                                    arr[itemIndex] = 2;
+            
+                                    combinationsSet.add(arr.toString()); // 1, 2, 1, 1, 1, 1, 1 (7)
+            
+                                    tmpArr = Object.assign([], arr); // Duplicating main array without overwriting it
+                                    if (itemIndex != tmpArr.length - 1) {
+                                        for (let l = 0; l < tmpArr.length; l++) {
+                                            if (tmpArr[l] == 1 && tmpArr.lastIndexOf(1) > -1 && tmpArr.lastIndexOf(1) > itemIndex) {
+            
+                                                tmpArr[l] += 1; // 2, 2, 1, 1, 1, 1, 1 (7)
+                                                tmpArr.splice(tmpArr.lastIndexOf(1), 1); // 2, 2, 1, 1, 1, 1 (6)
+                                                combinationsSet.add(tmpArr.toString());
+            
+                                                tmpArr2 = Object.assign([], tmpArr);
+                                                let ll = l; // Duplicating "l" index without overwriting it
+            
+                                                while (tmpArr2.indexOf(1, ll) > -1) {
+            
+                                                    let nextLL = tmpArr2.indexOf(1, ll);
+                                                    tmpArr2[tmpArr2.indexOf(1, ll)] += 1;
+                                                    tmpArr2[ll] -= 1; // 1, 2, 2, 1, 1, 1 (6)
+                                                    combinationsSet.add(tmpArr2.toString());
+                                                    ll = nextLL;
+                                                }
+                                            }
+                                        }
+                                    }
+            
+                                    itemIndex = arr.indexOf(1, itemIndex); // Finding the next "1" position in the array
+                                }
+            
+                            }
+                        }
+                    }
+                    console.log(combinationsSet);
+                }
+            
+                function sum(arr) {
+                    let sum = 0;
+                    for (let i = 0; i < arr.length; i++) {
+                        sum += arr[i];
+                    }
+                    return sum;
+                }
+            </xmp>
+            </span>
+
+        </div>
+
+        <div class="container">
+
+            <h2>Wordpress</h2>
+            <span class="answerContent">
+    
+               1. Actions - פונקציה שמאפשרת ליצור פעולות כמו שינוי והוספת ערכים, לפי הפרמטרים שהיא מקבלת. <br>
+                Filters - מסננת את האלמנטים הספציפיים שהפעולות יגעו בהם. לדוגמה אפשר לבחור בפעולה שתפעל רק על 3 אלמנטים מתוך 5 בדף. <br>
+                <br>
+                2. wp_head() - פונקציה שנועדה להוספת אלמנטים נחוצים שישפיעו על הדף, כמו סקריפטים, סטיילינג, תגיות meta וכד'. כמו בדף HTML בתכנות בסיסי. <br>
+                wp_footer() - פונקציה הנועדה להכנסת סקריפטים ותכנים לפני סגירת ה-body. יש דברים שעדיף להכניס בסוף הדף.
+
+            </span>          
+
+        </div>
+        
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
