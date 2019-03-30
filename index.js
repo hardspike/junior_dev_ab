@@ -30,7 +30,7 @@
 
 
 
-    function showSteps(num) {
+    async function showSteps(num) {
 
         let combinationsSet = new Set(); // Set of all combinations from the function
         let arr = []; // Main array to add to the set when reaching a check point
@@ -98,7 +98,7 @@
         $("#combinationsSet").html(Array.from(combinationsSet).join('<br>'));
     }
 
-    function sum(arr) {
+    async function sum(arr) {
         let sum = 0;
         for (let i = 0; i < arr.length; i++) {
             sum += arr[i];
