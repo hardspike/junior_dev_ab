@@ -57,7 +57,9 @@
                         arr[itemIndex - 1] = 1;
                         arr[itemIndex] = 2;
 
-                        combinationsSet.add(arr.toString()); // 1, 2, 1, 1, 1, 1, 1 (7)
+                        if (sum(arr) == num) {
+                            combinationsSet.add(arr.toString()); // 1, 2, 1, 1, 1, 1, 1 (7)
+                        }
 
                         tmpArr = Object.assign([], arr); // Duplicating main array without overwriting it
                         if (itemIndex != tmpArr.length - 1) {
@@ -66,7 +68,9 @@
 
                                     tmpArr[l] += 1; // 2, 2, 1, 1, 1, 1, 1 (7)
                                     tmpArr.splice(tmpArr.lastIndexOf(1), 1); // 2, 2, 1, 1, 1, 1 (6)
-                                    combinationsSet.add(tmpArr.toString());
+                                    if (sum(arr) == num) {
+                                        combinationsSet.add(tmpArr.toString());
+                                    }
 
                                     tmpArr2 = Object.assign([], tmpArr);
                                     let ll = l; // Duplicating "l" index without overwriting it
@@ -76,7 +80,9 @@
                                         let nextLL = tmpArr2.indexOf(1, ll);
                                         tmpArr2[tmpArr2.indexOf(1, ll)] += 1;
                                         tmpArr2[ll] -= 1; // 1, 2, 2, 1, 1, 1 (6)
-                                        combinationsSet.add(tmpArr2.toString());
+                                        if (sum(arr) == num) {
+                                            combinationsSet.add(tmpArr2.toString());
+                                        }
                                         ll = nextLL;
                                     }
                                 }
