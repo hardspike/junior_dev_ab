@@ -98,7 +98,7 @@
         $("#combinationsSet").html(Array.from(combinationsSet).join('<br>'));
     }
 
-    async function sum(arr) {
+    function sum(arr) {
         let sum = 0;
         for (let i = 0; i < arr.length; i++) {
             sum += arr[i];
